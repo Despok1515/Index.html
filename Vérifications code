@@ -1,0 +1,110 @@
+code de vérification coupon
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vérification de coupon</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .form-container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #005f73;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      color: #333;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background-color: #005f73;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0a9396;
+    }
+
+    .success-message {
+      margin-top: 20px;
+      color: green;
+      text-align: center;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Vérifier votre coupon</h2>
+
+    <form action="https://formspree.io/f/xdkgqarl" method="POST" onsubmit="return showSuccessMessage()">
+      <label for="nom">Nom complet :</label>
+      <input type="text" name="nom" id="nom" required>
+
+      <label for="email">Adresse Email :</label>
+      <input type="email" name="email" id="email" required>
+
+      <label for="coupon">code  coupon :</label>
+      <input type="text" name="coupon" id="coupon" required>
+
+      <button type="submit">Vérifier</button>
+    </form>
+
+    <div class="success-message" id="successMessage">
+      Merci ! Votre demande a été envoyée.
+    </div>
+  </div>
+
+  <script>
+    function showSuccessMessage() {
+      document.getElementById('successMessage').style.display = 'block';
+      return true;
+    }
+  </script>
+
+</body>
+</html>
